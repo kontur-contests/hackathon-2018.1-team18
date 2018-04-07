@@ -11,6 +11,7 @@ class MainCharacter : MonoBehaviour
     private Transform cachedTransform;
     private Rigidbody2D rb;
     private Animator bodyAnim;
+    private Animator flowerAnim;
     private int jumpCount = 0;
     private Vector3 startScale;
 
@@ -21,6 +22,7 @@ class MainCharacter : MonoBehaviour
         cachedTransform = transform;
         rb = GetComponent<Rigidbody2D>();
         bodyAnim = cachedTransform.Find("Renderers").Find("Body").GetComponent<Animator>();
+        flowerAnim = cachedTransform.Find("Renderers").Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
     }
 
@@ -36,8 +38,8 @@ class MainCharacter : MonoBehaviour
         if (dir != 0)
             cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
         var speedX = dir * MovementSpeed;
-        bodyAnim.Play(dir == 0 ? "idle" : "walk");
-        rb.AddForce(new Vector2(speedX, speedY));
+        PlayAnim(dir == 0 ? "idle" : "walk");
+        rb.velocity = new Vector2(speedX, speedY);
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
     }
@@ -56,4 +58,9 @@ class MainCharacter : MonoBehaviour
         }
     }
 
+    private void PlayAnim(string anim)
+    {
+        bodyAnim.Play(anim);
+        flowerAnim.Play(anim);
+    }
 }
