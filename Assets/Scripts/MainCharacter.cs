@@ -15,6 +15,7 @@ class MainCharacter : MonoBehaviour
     private int jumpCount = 0;
     private Vector3 startScale;
     private SpriteRenderer sp;
+    private bool jumping = false;
 
     private const int DeathY = -4;
     private const string LastJumpFrame = "1_Body_Jump1_4";
@@ -34,13 +35,17 @@ class MainCharacter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jumpCount++ < Stage)
+            {
                 PlayAnim("jump");
+                jumping = true;
+            }
             return;
         }
         if(sp.sprite.name == LastJumpFrame)
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
+            jumping = false;
             return;
         }
         if (jumpCount == 0)
@@ -58,7 +63,7 @@ class MainCharacter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (jumpCount != 0)
+        if (!jumping && jumpCount != 0)
         {
             if (collision.gameObject.tag == "Ground")
             {
