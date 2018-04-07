@@ -5,6 +5,7 @@ class MainCharacter : MonoBehaviour
 {
     public float MovementSpeed = 10f;
     public float JumpSpeed = 10f;
+    public float RepulsionSpeed = 10f;
     public int Stage = 1;
 
     private Transform cachedTransform;
@@ -33,8 +34,16 @@ class MainCharacter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (jumpCount != 0 && collision.gameObject.tag == "Ground")
-            jumpCount = 0;
+        if (jumpCount != 0)
+        {
+            if (collision.gameObject.tag == "Ground")
+                jumpCount = 0;
+            else if (Stage > 1 && collision.gameObject.tag == "Wall")
+            {
+                var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
+                rb.AddForce(new Vector2(-replValue, replValue));
+            }
+        }
     }
 
 }
