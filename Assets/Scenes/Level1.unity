@@ -272,8 +272,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168736302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.79, y: 0.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 103.61, y: -0.4, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -350,7 +350,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 11
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -373,7 +373,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330275978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: -1}
+  m_LocalPosition: {x: 0, y: 3.29, z: -2}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 795499042}
@@ -548,8 +548,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 823659740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.93, y: -1.46, z: 0}
-  m_LocalScale: {x: 1.6131825, y: 1.6131825, z: 1}
+  m_LocalPosition: {x: 31.7, y: -2.2, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -576,8 +576,11 @@ EdgeCollider2D:
   - {x: -0.48615456, y: 1.1957682}
   - {x: -0.25402546, y: 1.1810989}
   - {x: 0.17423248, y: 1.1505662}
-  - {x: 0.9752939, y: 1.2768595}
-  - {x: 2.5261803, y: 1.7005892}
+  - {x: 0.6066923, y: 1.1580074}
+  - {x: 0.99532646, y: 1.2167621}
+  - {x: 1.7140176, y: 1.3890668}
+  - {x: 2.5415134, y: 1.6775897}
+  - {x: 2.7895947, y: 1.7317293}
   - {x: 3.9674158, y: 1.7302403}
   - {x: 5.4742064, y: 2.1580904}
   - {x: 6.8691635, y: 2.4146485}
@@ -858,8 +861,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1471231137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.2, y: 1.88, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 76.38, y: 6.13, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
