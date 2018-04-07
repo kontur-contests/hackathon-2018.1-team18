@@ -34,12 +34,13 @@ class MainCharacter : MonoBehaviour
             if (jumpCount++ < Stage)
                 speedY = JumpSpeed;
         }
+        rb.AddForce(new Vector2(0f, speedY));
         var dir = Input.GetAxis("Horizontal");
         if (dir != 0)
             cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
         var speedX = dir * MovementSpeed;
         PlayAnim(dir == 0 ? "idle" : "walk");
-        rb.velocity = new Vector2(speedX, speedY);
+        rb.velocity = new Vector2(speedX, rb.velocity.y);
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
     }
