@@ -213,8 +213,9 @@ GameObject:
   m_Component:
   - component: {fileID: 168736304}
   - component: {fileID: 168736303}
+  - component: {fileID: 168736305}
   m_Layer: 0
-  m_Name: Ground11_0 (1)
+  m_Name: Ground2
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,12 +272,32 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168736302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.6, y: 3.59, z: 0}
+  m_LocalPosition: {x: 38.79, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &168736305
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168736302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.9802265, y: 2.2420952}
+  - {x: -3.1003323, y: 2.4167998}
+  - {x: -2.4050694, y: 2.554845}
+  - {x: 1.5183811, y: 3.026717}
+  - {x: 4.0656395, y: 3.1602862}
 --- !u!1 &330275978
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +474,7 @@ GameObject:
   - component: {fileID: 823659741}
   - component: {fileID: 823659744}
   m_Layer: 0
-  m_Name: Ground11_0
+  m_Name: Ground1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,8 +548,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 823659740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5, y: -2.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 11.93, y: -1.46, z: 0}
+  m_LocalScale: {x: 1.6131825, y: 1.6131825, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -554,8 +575,8 @@ EdgeCollider2D:
   - {x: -2.754283, y: 0.955575}
   - {x: -0.48615456, y: 1.1957682}
   - {x: -0.25402546, y: 1.1810989}
-  - {x: -0.05589962, y: 1.1179729}
-  - {x: 0.17953682, y: 1.0391749}
+  - {x: 0.17423248, y: 1.1505662}
+  - {x: 0.9752939, y: 1.2768595}
   - {x: 2.5261803, y: 1.7005892}
   - {x: 3.9674158, y: 1.7302403}
   - {x: 5.4742064, y: 2.1580904}
@@ -763,7 +784,7 @@ GameObject:
   - component: {fileID: 1471231138}
   - component: {fileID: 1471231141}
   m_Layer: 0
-  m_Name: Bridge1_0
+  m_Name: Bridge1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +858,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1471231137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.22, y: -2.86, z: 0}
+  m_LocalPosition: {x: 30.2, y: 1.88, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -864,9 +885,8 @@ EdgeCollider2D:
   - {x: -1.264823, y: 0.6369473}
   - {x: 0.03022194, y: 0.7881265}
   - {x: 1.417594, y: 0.7553261}
-  - {x: 2.2639751, y: 0.8962975}
-  - {x: 2.2072086, y: 0.52466047}
-  - {x: 2.0128317, y: 0.7593859}
+  - {x: 2.0035534, y: 0.5947563}
+  - {x: 2.2416973, y: 0.4729268}
 --- !u!1 &1478490694
 GameObject:
   m_ObjectHideFlags: 0
