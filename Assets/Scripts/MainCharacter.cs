@@ -63,10 +63,7 @@ class MainCharacter : MonoBehaviour
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
         if (Input.GetKeyDown(KeyCode.U))
-            Stage++;
-        else if (Input.GetKeyDown(KeyCode.J))
-            Stage--;
-
+            Stage = 2;
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canMove)
@@ -112,8 +109,9 @@ class MainCharacter : MonoBehaviour
         {
             if (Stage > 1 && collision.gameObject.tag == "Wall")
             {
-                var replValue = RepulsionSpeed * rb.velocity.x;
-                rb.AddForce(new Vector2(-replValue, replValue));
+                var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
+                //rb.MovePosition(transform.position + new Vector3(-10f, 10f, 0f));
+                rb.velocity += (new Vector2(-replValue, replValue));
             }
 
             else if(!canMove && collision.gameObject.tag == "Ground")
