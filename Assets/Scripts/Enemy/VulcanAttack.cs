@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeEnemyWeapon : MonoBehaviour {
+public class VulcanAttack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

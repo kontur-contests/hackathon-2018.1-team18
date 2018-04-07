@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 69bc0e8f61527ce4ab4d39f079cfa813
-timeCreated: 1523107858
+timeCreated: 1523099542
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,9 +9,6 @@ TextureImporter:
     21300004: 1_Body_Landing1_2
     21300006: 1_Body_Landing1_3
     21300008: 1_Body_Landing1_4
-    21300010: 1_Body_Landing1_5
-    21300012: 1_Body_Landing1_6
-    21300014: 1_Body_Landing1_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,7 +89,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
+        y: 0
         width: 800
         height: 800
       alignment: 0
@@ -106,7 +103,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 800
+        y: 0
         width: 800
         height: 800
       alignment: 0
@@ -120,7 +117,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 800
+        y: 0
         width: 800
         height: 800
       alignment: 0
@@ -134,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2400
-        y: 800
+        y: 0
         width: 800
         height: 800
       alignment: 0
@@ -148,48 +145,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3200
-        y: 800
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: 1_Body_Landing1_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: 1_Body_Landing1_6
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: 1_Body_Landing1_7
-      rect:
-        serializedVersion: 2
-        x: 1600
         y: 0
         width: 800
         height: 800
