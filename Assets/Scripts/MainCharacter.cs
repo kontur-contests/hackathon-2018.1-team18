@@ -48,7 +48,11 @@ class MainCharacter : MonoBehaviour
     {
         cachedTransform = transform;
         rb = GetComponent<Rigidbody2D>();
+<<<<<<< HEAD
         renderers = cachedTransform.Find("Renderers");  
+=======
+        renderers = cachedTransform.Find("Renderers");
+>>>>>>> 1aeb1563279911741e2d55c3b0eb5f4de92b67b0
         bodyAnim = renderers.Find("Body").GetComponent<Animator>();
         flowerAnim = renderers.Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
@@ -118,7 +122,7 @@ class MainCharacter : MonoBehaviour
         
         var dir = Input.GetAxis("Horizontal");
         if (dir != 0)
-            cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
+            renderers.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
         var speedX = dir * MovementSpeed;
         rb.velocity = new Vector2(speedX, rb.velocity.y);
         if (canMove && jumpCount == 0)
