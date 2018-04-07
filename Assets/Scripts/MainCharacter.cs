@@ -10,14 +10,18 @@ class MainCharacter : MonoBehaviour
 
     private Transform cachedTransform;
     private Rigidbody2D rb;
+    private Animator bodyAnim;
     private int jumpCount = 0;
+    private Vector3 startScale;
 
     private const int DeathY = -4;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         cachedTransform = transform;
+        rb = GetComponent<Rigidbody2D>();
+        bodyAnim = cachedTransform.Find("Renderers").Find("Body").GetComponent<Animator>();
+        startScale = cachedTransform.localScale;
     }
 
     private void Update()
@@ -28,7 +32,11 @@ class MainCharacter : MonoBehaviour
             if (jumpCount++ < Stage)
                 speedY = JumpSpeed;
         }
-        var speedX = Input.GetAxis("Horizontal") * MovementSpeed;
+        var dir = Input.GetAxis("Horizontal");
+        if (dir != 0)
+            cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
+        var speedX = dir * MovementSpeed;
+        bodyAnim.Play(dir == 0 ? "idle" : "walk");
         rb.AddForce(new Vector2(speedX, speedY));
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
