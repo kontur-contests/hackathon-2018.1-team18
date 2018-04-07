@@ -89,7 +89,7 @@ class MainCharacter : MonoBehaviour
         }
         else if(Stage > 1 && sp.sprite.name == LastDoubleJumpAnim[Stage])
         {
-            rb.AddForce(new Vector2(0f, JumpSpeed));
+            rb.AddForce(new Vector2(0f, JumpSpeed * 1.2f));
             PlayAnim("inair");
             return;
         }
