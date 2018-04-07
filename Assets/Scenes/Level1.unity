@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 168736304}
   - component: {fileID: 168736303}
   - component: {fileID: 168736305}
+  - component: {fileID: 168736306}
   m_Layer: 0
   m_Name: Ground2
   m_TagString: Ground
@@ -315,6 +316,23 @@ EdgeCollider2D:
   - {x: 3.3829715, y: 3.1440337}
   - {x: 3.7963123, y: 3.1853004}
   - {x: 4.0656395, y: 3.1602862}
+--- !u!95 &168736306
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168736302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed1cba9e41482fb4fac79576dcd496fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &330275978
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpSpeed: 30000
+  JumpSpeed: 10000
   RepulsionSpeed: 1000
 --- !u!1 &823659740
 GameObject:
@@ -568,7 +586,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2142596434}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &823659744
 EdgeCollider2D:
@@ -826,7 +844,7 @@ Transform:
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2142596434}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1471231141
 EdgeCollider2D:
@@ -899,7 +917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1505613939
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -955,7 +973,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 2142596434}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1505613941
 EdgeCollider2D:
@@ -1032,10 +1050,10 @@ Transform:
   m_LocalPosition: {x: 79.97256, y: 13.874895, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1471231140}
-  - {fileID: 1505613940}
-  - {fileID: 168736304}
   - {fileID: 823659743}
+  - {fileID: 1471231140}
+  - {fileID: 168736304}
+  - {fileID: 1505613940}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
