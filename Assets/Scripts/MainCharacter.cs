@@ -19,6 +19,7 @@ class MainCharacter : MonoBehaviour
     }
 
     private int stage;
+    private Transform renderers;
     private Transform cachedTransform;
     private Rigidbody2D rb;
     private Animator bodyAnim;
@@ -49,8 +50,9 @@ class MainCharacter : MonoBehaviour
     {
         cachedTransform = transform;
         rb = GetComponent<Rigidbody2D>();
-        bodyAnim = cachedTransform.Find("Renderers").Find("Body").GetComponent<Animator>();
-        flowerAnim = cachedTransform.Find("Renderers").Find("Flower").GetComponent<Animator>();
+        renderers = cachedTransform.Find("Renderers");
+        bodyAnim = renderers.Find("Body").GetComponent<Animator>();
+        flowerAnim = renderers.Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
         sp = bodyAnim.GetComponent<SpriteRenderer>();
         dustPrefab = Resources.Load<GameObject>("Dust");
@@ -96,7 +98,7 @@ class MainCharacter : MonoBehaviour
         
         var dir = Input.GetAxis("Horizontal");
         if (dir != 0)
-            cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
+            renderers.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
         var speedX = dir * MovementSpeed;
         rb.velocity = new Vector2(speedX, rb.velocity.y);
         if (canMove && jumpCount == 0)
