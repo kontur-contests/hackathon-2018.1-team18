@@ -1,0 +1,12 @@
+Adobe After Effects v14.1 Windows 64 render log for project “1_jump.aep”
+
+Rendering started on 07/04/2018 at 15:46:39
+
+  07/04/2018 15:46:39: Starting composition “Comp 1”.
+
+  Output To: I:\JAM\hackathon-2018.1-team18111\Assets\Sprites\Rocky\stage_1\jump\landing\Anim_[#####].png    07/04/2018 15:46:42: Finished composition “Comp 1”.
+
+
+  Total Time Elapsed: 3 Seconds
+Log closed on 07/04/2018 at 15:46:42
+
