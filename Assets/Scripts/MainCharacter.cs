@@ -48,11 +48,7 @@ class MainCharacter : MonoBehaviour
     {
         cachedTransform = transform;
         rb = GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
-        renderers = cachedTransform.Find("Renderers");  
-=======
-        renderers = cachedTransform.Find("Renderers");
->>>>>>> 1aeb1563279911741e2d55c3b0eb5f4de92b67b0
+        renderers = transform.Find("Renderers");
         bodyAnim = renderers.Find("Body").GetComponent<Animator>();
         flowerAnim = renderers.Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
