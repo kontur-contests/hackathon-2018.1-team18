@@ -7,18 +7,9 @@ class MainCharacter : MonoBehaviour
     public float MovementSpeed = 10f;
     public float JumpSpeed = 10f;
     public float RepulsionSpeed = 10f;
-    public int Stage
-    {
-        get { return stage; }
-        set
-        {
-            stage = value;
-            bodyAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Body");
-            flowerAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Flower");
-        }
-    }
 
     private int stage;
+    private Transform renderers;
     private Transform cachedTransform;
     private Rigidbody2D rb;
     private Animator bodyAnim;
@@ -27,8 +18,10 @@ class MainCharacter : MonoBehaviour
     private Vector3 startScale;
     private SpriteRenderer sp;
     private bool canMove = true;
+    private bool transforming = false;
     private GameObject dustPrefab;
     private GameObject poofPrefab;
+    private GameObject flushPrefab;
 
 
     private static readonly Dictionary<int, string> LastJumpFrame = new Dictionary<int, string>()
@@ -42,6 +35,12 @@ class MainCharacter : MonoBehaviour
         {2, "2_Body_Double1_6" }
     };
 
+    private static readonly Dictionary<int, string> LastTransformFrame = new Dictionary<int, string>()
+    {
+        {1, "1_Body_Transform1_22" },
+        {2, "Nothing" }
+    };
+
     private const int DeathY = -5;
     private const float distanceToGroundLandingStart = 0.8f;
 
@@ -49,21 +48,45 @@ class MainCharacter : MonoBehaviour
     {
         cachedTransform = transform;
         rb = GetComponent<Rigidbody2D>();
-        bodyAnim = cachedTransform.Find("Renderers").Find("Body").GetComponent<Animator>();
-        flowerAnim = cachedTransform.Find("Renderers").Find("Flower").GetComponent<Animator>();
+        renderers = cachedTransform.Find("Renderers");  
+        bodyAnim = renderers.Find("Body").GetComponent<Animator>();
+        flowerAnim = renderers.Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
         sp = bodyAnim.GetComponent<SpriteRenderer>();
         dustPrefab = Resources.Load<GameObject>("Dust");
         poofPrefab = Resources.Load<GameObject>("Poof");
-        Stage = 1;
+        flushPrefab = Resources.Load<GameObject>("Flush/Flush");
+        stage = 1;
+    }
+
+    private void UpdateToNextStage()
+    {
+        stage++;
+        renderers.position = new Vector2(renderers.position.x + 0.1f, renderers.position.y - 0.1f);
+        bodyAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Body");
+        flowerAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Flower");
     }
 
     private void Update()
     {
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
-        if (Input.GetKeyDown(KeyCode.U))
-            Stage = 2;
+        if (Input.GetKeyDown(KeyCode.U) && stage == 1)
+        {
+            PlayAnim("transform");
+            transforming = true;
+            CreateEffect(flushPrefab);
+        }
+
+        else if (sp.sprite.name == LastTransformFrame[stage])
+        {
+            UpdateToNextStage();
+            PlayAnim("transform");
+
+        }
+
+        if (transforming) return;
+
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canMove)
@@ -72,22 +95,21 @@ class MainCharacter : MonoBehaviour
                 PlayAnim("jump");
                 canMove = false;
             }
-            else if(Stage > 1 && jumpCount == 1)
+            else if (stage > 1 && jumpCount == 1)
             {
                 jumpCount = 2;
                 PlayAnim("double");
                 CreateEffect(poofPrefab);
             }
-
             return;
         }
-        if(sp.sprite.name == LastJumpFrame[Stage])
+        else if (sp.sprite.name == LastJumpFrame[stage])
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
             return;
         }
-        else if(Stage > 1 && sp.sprite.name == LastDoubleJumpAnim[Stage])
+        else if (stage > 1 && sp.sprite.name == LastDoubleJumpAnim[stage])
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
@@ -107,7 +129,7 @@ class MainCharacter : MonoBehaviour
     {
         if (jumpCount != 0)
         {
-            if (Stage > 1 && collision.gameObject.tag == "Wall")
+            if (stage > 1 && collision.gameObject.tag == "Wall")
             {
                 var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
                 //rb.MovePosition(transform.position + new Vector3(-10f, 10f, 0f));
