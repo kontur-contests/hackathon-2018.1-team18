@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 class MainCharacter : MonoBehaviour
@@ -6,8 +7,18 @@ class MainCharacter : MonoBehaviour
     public float MovementSpeed = 10f;
     public float JumpSpeed = 10f;
     public float RepulsionSpeed = 10f;
-    public int Stage = 1;
+    public int Stage
+    {
+        get { return stage; }
+        set
+        {
+            stage = value;
+            bodyAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Body");
+            flowerAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Flower");
+        }
+    }
 
+    private int stage;
     private Transform cachedTransform;
     private Collider2D cachedCollider;
     private Rigidbody2D rb;
@@ -21,10 +32,21 @@ class MainCharacter : MonoBehaviour
     private Vector2 startColliderOffset;
     private GameObject dustPrefab;
 
+
+    private static readonly Dictionary<int, string> LastJumpFrame = new Dictionary<int, string>()
+    {
+        {1, "1_Body_Jump1_4" },
+        {2, "2_Body_Jump1_10" }
+    };
+
+    private static readonly Dictionary<int, string> LastLandingFrame = new Dictionary<int, string>()
+    {
+        {1, "1_Body_Landing1_7"},
+        {2, "2_Body_Landing1_10" }
+    };
+
     private const int DeathY = -5;
     private const float distanceToGroundLandingStart = 0.5f;
-    private const string LastJumpFrame = "1_Body_Jump1_4";
-    private const string LastLandingFrame = "1_Body_Landing1_7";
 
     private void Start()
     {
@@ -37,6 +59,7 @@ class MainCharacter : MonoBehaviour
         cachedCollider = GetComponent<Collider2D>();
         startColliderOffset = cachedCollider.offset;
         dustPrefab = Resources.Load<GameObject>("Dust");
+        Stage = 1;
     }
 
     private void Update()
@@ -45,7 +68,7 @@ class MainCharacter : MonoBehaviour
             SceneManager.LoadScene("DeathScene");
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCount++ < Stage)
+            if (canMove)
             {
                 PlayAnim("jump");
                 jumping = true;
@@ -53,7 +76,7 @@ class MainCharacter : MonoBehaviour
             }
             return;
         }
-        if(sp.sprite.name == LastJumpFrame)
+        if(sp.sprite.name == LastJumpFrame[Stage])
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             cachedCollider.offset = new Vector2(startColliderOffset.x, startColliderOffset.y - distanceToGroundLandingStart);
@@ -62,7 +85,7 @@ class MainCharacter : MonoBehaviour
             jumping = false;
             return;
         }
-        if (sp.sprite.name == LastLandingFrame)
+        if (sp.sprite.name == LastLandingFrame[Stage])
             canMove = true;
         if (canMove && jumpCount == 0)
         {
