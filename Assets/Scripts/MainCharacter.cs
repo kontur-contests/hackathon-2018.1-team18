@@ -10,6 +10,7 @@ class MainCharacter : MonoBehaviour
     private Transform cachedTransform;
     private Rigidbody2D rb;
     private int jumpCount = 0;
+    private const int deathY = -4;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ class MainCharacter : MonoBehaviour
                 speedY = JumpSpeed;
         }
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * MovementSpeed, speedY));
-        if (cachedTransform.position.y < 0)
+        if (cachedTransform.position.y < deathY)
             SceneManager.LoadScene("DeathScene");
     }
 
