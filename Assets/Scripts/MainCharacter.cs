@@ -28,12 +28,18 @@ class MainCharacter : MonoBehaviour
     private SpriteRenderer sp;
     private bool canMove = true;
     private GameObject dustPrefab;
+    private GameObject poofPrefab;
 
 
     private static readonly Dictionary<int, string> LastJumpFrame = new Dictionary<int, string>()
     {
         {1, "1_Body_Jump1_4" },
         {2, "2_Body_Jump1_10" }
+    };
+
+    private static readonly Dictionary<int, string> LastDoubleJumpAnim = new Dictionary<int, string>()
+    {
+        {2, "2_Body_Double1_6" }
     };
 
     private const int DeathY = -5;
@@ -48,6 +54,7 @@ class MainCharacter : MonoBehaviour
         startScale = cachedTransform.localScale;
         sp = bodyAnim.GetComponent<SpriteRenderer>();
         dustPrefab = Resources.Load<GameObject>("Dust");
+        poofPrefab = Resources.Load<GameObject>("Poof");
         Stage = 1;
     }
 
@@ -65,9 +72,22 @@ class MainCharacter : MonoBehaviour
                 PlayAnim("jump");
                 canMove = false;
             }
+            else if(Stage > 1 && jumpCount == 1)
+            {
+                jumpCount = 2;
+                PlayAnim("double");
+                CreateEffect(poofPrefab);
+            }
+
             return;
         }
         if(sp.sprite.name == LastJumpFrame[Stage])
+        {
+            rb.AddForce(new Vector2(0f, JumpSpeed));
+            PlayAnim("inair");
+            return;
+        }
+        else if(Stage > 1 && sp.sprite.name == LastDoubleJumpAnim[Stage])
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
@@ -98,10 +118,7 @@ class MainCharacter : MonoBehaviour
             {
                 jumpCount = 0;
                 canMove = true;
-                var dust = Instantiate(dustPrefab, transform);
-                dust.transform.localPosition = dustPrefab.transform.position;
-                dust.transform.localScale = dustPrefab.transform.localScale;
-                dust.transform.parent = null;
+                CreateEffect(dustPrefab);
             }
         }
     }
@@ -110,5 +127,13 @@ class MainCharacter : MonoBehaviour
     {
         bodyAnim.Play(anim);
         flowerAnim.Play(anim);
+    }
+
+    private void CreateEffect(GameObject prefab)
+    {
+        var effect = Instantiate(prefab, transform);
+        effect.transform.localPosition = prefab.transform.position;
+        effect.transform.localScale = prefab.transform.localScale;
+        effect.transform.parent = null;
     }
 }
