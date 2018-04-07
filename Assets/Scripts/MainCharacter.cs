@@ -18,10 +18,11 @@ class MainCharacter : MonoBehaviour
     private SpriteRenderer sp;
     private bool jumping = false;
     private bool landing = false;
-    private float distanceToGroundLandingStart = 1;
+    private bool canMove = true;
     private Vector2 startColliderOffset;
 
     private const int DeathY = -4;
+    private const float distanceToGroundLandingStart = 0.5f;
     private const string LastJumpFrame = "1_Body_Jump1_4";
     private const string LastLandingFrame = "1_Body_Landing1_7";
 
@@ -45,6 +46,7 @@ class MainCharacter : MonoBehaviour
             {
                 PlayAnim("jump");
                 jumping = true;
+                canMove = false;
             }
             return;
         }
@@ -58,8 +60,11 @@ class MainCharacter : MonoBehaviour
             return;
         }
         if (sp.sprite.name == LastLandingFrame)
+        {
             landing = false;
-        if (!landing && jumpCount == 0)
+            canMove = true;
+        }
+        if (canMove && jumpCount == 0)
         {
             var dir = Input.GetAxis("Horizontal");
             if (dir != 0)
