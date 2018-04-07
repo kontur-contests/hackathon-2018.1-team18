@@ -19,7 +19,6 @@ class MainCharacter : MonoBehaviour
     }
 
     private int stage;
-    private Transform renderers;
     private Transform cachedTransform;
     private Rigidbody2D rb;
     private Animator bodyAnim;
@@ -50,9 +49,8 @@ class MainCharacter : MonoBehaviour
     {
         cachedTransform = transform;
         rb = GetComponent<Rigidbody2D>();
-        renderers = cachedTransform.Find("Renderers");
-        bodyAnim = renderers.Find("Body").GetComponent<Animator>();
-        flowerAnim = renderers.Find("Flower").GetComponent<Animator>();
+        bodyAnim = cachedTransform.Find("Renderers").Find("Body").GetComponent<Animator>();
+        flowerAnim = cachedTransform.Find("Renderers").Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
         sp = bodyAnim.GetComponent<SpriteRenderer>();
         dustPrefab = Resources.Load<GameObject>("Dust");
@@ -91,14 +89,14 @@ class MainCharacter : MonoBehaviour
         }
         else if(Stage > 1 && sp.sprite.name == LastDoubleJumpAnim[Stage])
         {
-            rb.AddForce(new Vector2(0f, JumpSpeed * 0.8f));
+            rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
             return;
         }
         
         var dir = Input.GetAxis("Horizontal");
         if (dir != 0)
-            renderers.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
+            cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
         var speedX = dir * MovementSpeed;
         rb.velocity = new Vector2(speedX, rb.velocity.y);
         if (canMove && jumpCount == 0)
@@ -112,17 +110,8 @@ class MainCharacter : MonoBehaviour
             if (Stage > 1 && collision.gameObject.tag == "Wall")
             {
                 var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
-<<<<<<< HEAD
-                rb.MovePosition(transform.position + new Vector3(-10f, 10f, 0f));
-                //rb.velocity += (new Vector2(-replValue, replValue));
-=======
                 //rb.MovePosition(transform.position + new Vector3(-10f, 10f, 0f));
-<<<<<<< HEAD
-                rb.velocity += new Vector2(-replValue, replValue);
-=======
                 rb.velocity += (new Vector2(-replValue, replValue));
->>>>>>> 9d69246375b6c707e8070155e4f7a76125dfe828
->>>>>>> 5c3c7dfd507dd6ce1a47cca2d899f990c10eb1d9
             }
 
             else if(!canMove && collision.gameObject.tag == "Ground")

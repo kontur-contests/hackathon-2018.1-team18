@@ -35,7 +35,7 @@ class EnemyBehaviour: MonoBehaviour
             rb.velocity = new Vector2(speedX * directionX, 0);
         }
         if (IsPlayerNear() && rb.velocity.x != 0
-            && Math.Abs(playerTransform.position.x - cachedTransform.position.x) < 3)
+            && Math.Abs(playerTransform.position.x - cachedTransform.position.x) < 2)
             rb.velocity = new Vector2(0, 0);
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VulcanAttack : MonoBehaviour {
+public class StaticEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
