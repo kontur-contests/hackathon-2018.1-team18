@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7c59932dee7713840b29552d7fb54bc1
-timeCreated: 1523099370
+timeCreated: 1523107876
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,9 @@ TextureImporter:
     21300004: 1_Flower_Landing1_2
     21300006: 1_Flower_Landing1_3
     21300008: 1_Flower_Landing1_4
+    21300010: 1_Flower_Landing1_5
+    21300012: 1_Flower_Landing1_6
+    21300014: 1_Flower_Landing1_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -89,7 +92,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -103,7 +106,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -117,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -131,7 +134,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2400
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -145,6 +148,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3200
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Flower_Landing1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Flower_Landing1_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Flower_Landing1_7
+      rect:
+        serializedVersion: 2
+        x: 1600
         y: 0
         width: 800
         height: 800
