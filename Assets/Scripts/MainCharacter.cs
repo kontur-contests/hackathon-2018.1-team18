@@ -19,6 +19,7 @@ class MainCharacter : MonoBehaviour
     private bool jumping = false;
     private bool canMove = true;
     private Vector2 startColliderOffset;
+    private GameObject dustPrefab;
 
     private const int DeathY = -4;
     private const float distanceToGroundLandingStart = 0.5f;
@@ -35,6 +36,7 @@ class MainCharacter : MonoBehaviour
         sp = bodyAnim.GetComponent<SpriteRenderer>();
         cachedCollider = GetComponent<Collider2D>();
         startColliderOffset = cachedCollider.offset;
+        dustPrefab = Resources.Load<GameObject>("Dust");
     }
 
     private void Update()
@@ -82,6 +84,15 @@ class MainCharacter : MonoBehaviour
                 var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
                 rb.AddForce(new Vector2(-replValue, replValue));
             }
+
+            else if(collision.gameObject.tag == "Ground")
+            {
+                jumpCount = 0;
+                var dust = Instantiate(dustPrefab, transform);
+                dust.transform.localPosition = dustPrefab.transform.position;
+                dust.transform.localScale = dustPrefab.transform.localScale;
+                dust.transform.parent = null;
+            }
         }
     }
 
@@ -89,7 +100,6 @@ class MainCharacter : MonoBehaviour
     {
         if (!jumping && jumpCount != 0 && collision.gameObject.tag == "Ground")
         {
-            jumpCount = 0;
             PlayAnim("landing");
             cachedCollider.offset = startColliderOffset;
             cachedCollider.isTrigger = false;
