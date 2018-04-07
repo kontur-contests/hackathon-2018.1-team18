@@ -26,7 +26,8 @@ class MainCharacter : MonoBehaviour
             if (jumpCount++ < Stage)
                 speedY = JumpSpeed;
         }
-        rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * MovementSpeed, speedY));
+        var speedX = jumpCount == 0 ? Input.GetAxis("Horizontal") * MovementSpeed : 0f;
+        rb.AddForce(new Vector2(speedX, speedY));
         if (cachedTransform.position.y < 0)
             SceneManager.LoadScene("DeathScene");
     }
