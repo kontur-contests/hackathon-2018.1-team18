@@ -188,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330275978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.34, z: -1}
+  m_LocalPosition: {x: 0, y: 0.2, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 795499042}
@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpSpeed: 300
+  Stage: 2
 --- !u!58 &795499045
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -330,8 +331,8 @@ GameObject:
   - component: {fileID: 850752356}
   - component: {fileID: 850752358}
   m_Layer: 0
-  m_Name: New Sprite
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
