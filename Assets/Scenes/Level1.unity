@@ -625,7 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpSpeed: 30000
-  RepulsionSpeed: 1000
+  RepulsionSpeed: 40
 --- !u!1 &823659740
 GameObject:
   m_ObjectHideFlags: 0
