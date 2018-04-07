@@ -9,6 +9,7 @@ class MainCharacter : MonoBehaviour
     public int Stage = 1;
 
     private Transform cachedTransform;
+    private Collider2D cachedCollider;
     private Rigidbody2D rb;
     private Animator bodyAnim;
     private Animator flowerAnim;
@@ -16,9 +17,13 @@ class MainCharacter : MonoBehaviour
     private Vector3 startScale;
     private SpriteRenderer sp;
     private bool jumping = false;
+    private bool landing = false;
+    private float distanceToGroundLandingStart = 1;
+    private Vector2 startColliderOffset;
 
     private const int DeathY = -4;
     private const string LastJumpFrame = "1_Body_Jump1_4";
+    private const string LastLandingFrame = "1_Body_Landing1_7";
 
     private void Start()
     {
@@ -28,6 +33,8 @@ class MainCharacter : MonoBehaviour
         flowerAnim = cachedTransform.Find("Renderers").Find("Flower").GetComponent<Animator>();
         startScale = cachedTransform.localScale;
         sp = bodyAnim.GetComponent<SpriteRenderer>();
+        cachedCollider = GetComponent<Collider2D>();
+        startColliderOffset = cachedCollider.offset;
     }
 
     private void Update()
@@ -44,11 +51,15 @@ class MainCharacter : MonoBehaviour
         if(sp.sprite.name == LastJumpFrame)
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
+            cachedCollider.offset = new Vector2(startColliderOffset.x, startColliderOffset.y - distanceToGroundLandingStart);
+            cachedCollider.isTrigger = true;
             PlayAnim("inair");
             jumping = false;
             return;
         }
-        if (jumpCount == 0)
+        if (sp.sprite.name == LastLandingFrame)
+            landing = false;
+        if (!landing && jumpCount == 0)
         {
             var dir = Input.GetAxis("Horizontal");
             if (dir != 0)
@@ -65,16 +76,23 @@ class MainCharacter : MonoBehaviour
     {
         if (!jumping && jumpCount != 0)
         {
-            if (collision.gameObject.tag == "Ground")
-            {
-                jumpCount = 0;
-                PlayAnim("landing");
-            }
-            else if (Stage > 1 && collision.gameObject.tag == "Wall")
+            if (Stage > 1 && collision.gameObject.tag == "Wall")
             {
                 var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
                 rb.AddForce(new Vector2(-replValue, replValue));
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!jumping && jumpCount != 0 && collision.gameObject.tag == "Ground")
+        {
+            jumpCount = 0;
+            PlayAnim("landing");
+            landing = true;
+            cachedCollider.offset = startColliderOffset;
+            cachedCollider.isTrigger = false;
         }
     }
 
