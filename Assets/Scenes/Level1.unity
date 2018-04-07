@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 773162215}
   m_Layer: 0
   m_Name: Gravity4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,8 +544,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1310631, y: 1.0044267}
-  m_Size: {x: 2.498834, y: 4.0829425}
+  m_Offset: {x: 0.1310631, y: 1.0423257}
+  m_Size: {x: 2.498834, y: 4.0071445}
   m_Direction: 0
 --- !u!4 &795499042
 Transform:
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 1318226720}
   m_Layer: 0
   m_Name: FlyingGravity
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 1505613941}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
