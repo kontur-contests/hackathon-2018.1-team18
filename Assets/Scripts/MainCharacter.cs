@@ -107,13 +107,13 @@ class MainCharacter : MonoBehaviour
     {
         if (jumpCount != 0)
         {
-            /*if (Stage > 1 && collision.gameObject.tag == "Wall")
+            if (Stage > 1 && collision.gameObject.tag == "Wall")
             {
-                var replValue = RepulsionSpeed * Input.GetAxis("Horizontal");
+                var replValue = RepulsionSpeed * rb.velocity.x;
                 rb.AddForce(new Vector2(-replValue, replValue));
             }
 
-            else */if(!canMove && collision.gameObject.tag == "Ground")
+            else if(!canMove && collision.gameObject.tag == "Ground")
             {
                 jumpCount = 0;
                 canMove = true;
