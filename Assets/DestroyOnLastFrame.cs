@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-class Dust : MonoBehaviour
+class DestroyOnLastFrame : MonoBehaviour
 {
-    private const string LastFrame = "Dust_3";
+    public string LastFrame = "Dust_3";
 
     private SpriteRenderer sp;
 
