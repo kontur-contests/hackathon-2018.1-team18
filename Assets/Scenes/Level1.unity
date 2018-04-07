@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpSpeed: 300
+  JumpSpeed: 7000
   RepulsionSpeed: 1000
   Stage: 2
 --- !u!1 &850752355
