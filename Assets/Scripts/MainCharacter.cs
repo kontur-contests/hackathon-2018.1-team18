@@ -26,7 +26,6 @@ class MainCharacter : MonoBehaviour
     private int jumpCount = 0;
     private Vector3 startScale;
     private SpriteRenderer sp;
-    private bool jumping = false;
     private bool canMove = true;
     private GameObject dustPrefab;
 
@@ -64,7 +63,6 @@ class MainCharacter : MonoBehaviour
             {
                 jumpCount = 1;
                 PlayAnim("jump");
-                jumping = true;
                 canMove = false;
             }
             return;
@@ -73,7 +71,6 @@ class MainCharacter : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
-            jumping = false;
             return;
         }
         if (canMove && jumpCount == 0)
