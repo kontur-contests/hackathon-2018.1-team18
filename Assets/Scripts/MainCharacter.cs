@@ -70,6 +70,7 @@ class MainCharacter : MonoBehaviour
         {
             if (canMove)
             {
+                jumpCount = 1;
                 PlayAnim("jump");
                 jumping = true;
                 canMove = false;
