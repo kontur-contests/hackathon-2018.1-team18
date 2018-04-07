@@ -17,7 +17,6 @@ class MainCharacter : MonoBehaviour
     private Vector3 startScale;
     private SpriteRenderer sp;
     private bool jumping = false;
-    private bool landing = false;
     private bool canMove = true;
     private Vector2 startColliderOffset;
 
@@ -60,10 +59,7 @@ class MainCharacter : MonoBehaviour
             return;
         }
         if (sp.sprite.name == LastLandingFrame)
-        {
-            landing = false;
             canMove = true;
-        }
         if (canMove && jumpCount == 0)
         {
             var dir = Input.GetAxis("Horizontal");
@@ -95,7 +91,6 @@ class MainCharacter : MonoBehaviour
         {
             jumpCount = 0;
             PlayAnim("landing");
-            landing = true;
             cachedCollider.offset = startColliderOffset;
             cachedCollider.isTrigger = false;
         }
