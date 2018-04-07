@@ -76,23 +76,25 @@ class MainCharacter : MonoBehaviour
     {
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
-        if (Input.GetKeyDown(KeyCode.U) && stage == 1)
+        if (canMove)
         {
-            PlayAnim("transform");
-            rb.velocity = Vector2.zero;
-            transforming = true;
-            CreateEffect(flushPrefab);
+            if (Input.GetKeyDown(KeyCode.U) && stage == 1)
+            {
+                PlayAnim("transform");
+                rb.velocity = Vector2.zero;
+                transforming = true;
+                CreateEffect(flushPrefab);
+            }
+
+            else if (sp.sprite.name == LastTransformStartFrame[stage])
+            {
+                UpdateToNextStage();
+                PlayAnim("transform");
+            }
+
+            else if (stage > 1 && sp.sprite.name == LastTransformEndFrame[stage])
+                transforming = false;
         }
-
-        else if (sp.sprite.name == LastTransformStartFrame[stage])
-        {
-            UpdateToNextStage();
-            PlayAnim("transform");
-        }
-
-        else if (stage > 1 && sp.sprite.name == LastTransformEndFrame[stage])
-            transforming = false;
-
         if (transforming) return;
 
         else if (Input.GetKeyDown(KeyCode.Space))
