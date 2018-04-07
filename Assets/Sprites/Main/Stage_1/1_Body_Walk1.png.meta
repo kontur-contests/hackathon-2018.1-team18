@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 136447be5da3aaf49aa86a03dc05c4fb
-timeCreated: 1523094370
+timeCreated: 1523106241
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -24,6 +24,11 @@ TextureImporter:
     21300034: 1_Body_Walk1_17
     21300036: 1_Body_Walk1_18
     21300038: 1_Body_Walk1_19
+    21300040: 1_Body_Walk1_20
+    21300042: 1_Body_Walk1_21
+    21300044: 1_Body_Walk1_22
+    21300046: 1_Body_Walk1_23
+    21300048: 1_Body_Walk1_24
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -104,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2400
+        y: 3200
         width: 800
         height: 800
       alignment: 0
@@ -118,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 2400
+        y: 3200
         width: 800
         height: 800
       alignment: 0
@@ -132,7 +137,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 2400
+        y: 3200
         width: 800
         height: 800
       alignment: 0
@@ -146,7 +151,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2400
-        y: 2400
+        y: 3200
         width: 800
         height: 800
       alignment: 0
@@ -160,7 +165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3200
-        y: 2400
+        y: 3200
         width: 800
         height: 800
       alignment: 0
@@ -174,7 +179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1600
+        y: 2400
         width: 800
         height: 800
       alignment: 0
@@ -188,7 +193,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 1600
+        y: 2400
         width: 800
         height: 800
       alignment: 0
@@ -202,7 +207,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 1600
+        y: 2400
         width: 800
         height: 800
       alignment: 0
@@ -216,7 +221,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2400
-        y: 1600
+        y: 2400
         width: 800
         height: 800
       alignment: 0
@@ -230,7 +235,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3200
-        y: 1600
+        y: 2400
         width: 800
         height: 800
       alignment: 0
@@ -244,7 +249,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
+        y: 1600
         width: 800
         height: 800
       alignment: 0
@@ -258,7 +263,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 800
+        y: 1600
         width: 800
         height: 800
       alignment: 0
@@ -272,7 +277,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 800
+        y: 1600
         width: 800
         height: 800
       alignment: 0
@@ -286,7 +291,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2400
-        y: 800
+        y: 1600
         width: 800
         height: 800
       alignment: 0
@@ -300,7 +305,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3200
-        y: 800
+        y: 1600
         width: 800
         height: 800
       alignment: 0
@@ -314,7 +319,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -328,7 +333,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -342,7 +347,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -356,7 +361,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2400
-        y: 0
+        y: 800
         width: 800
         height: 800
       alignment: 0
@@ -367,6 +372,76 @@ TextureImporter:
       tessellationDetail: 0
     - serializedVersion: 2
       name: 1_Body_Walk1_19
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Body_Walk1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Body_Walk1_21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Body_Walk1_22
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Body_Walk1_23
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1_Body_Walk1_24
       rect:
         serializedVersion: 2
         x: 3200
