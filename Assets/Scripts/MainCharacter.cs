@@ -21,7 +21,7 @@ class MainCharacter : MonoBehaviour
     private Vector2 startColliderOffset;
     private GameObject dustPrefab;
 
-    private const int DeathY = -4;
+    private const int DeathY = -5;
     private const float distanceToGroundLandingStart = 0.5f;
     private const string LastJumpFrame = "1_Body_Jump1_4";
     private const string LastLandingFrame = "1_Body_Landing1_7";
@@ -41,6 +41,8 @@ class MainCharacter : MonoBehaviour
 
     private void Update()
     {
+        if (cachedTransform.position.y < DeathY)
+            SceneManager.LoadScene("DeathScene");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jumpCount++ < Stage)
@@ -70,8 +72,6 @@ class MainCharacter : MonoBehaviour
             var speedX = dir * MovementSpeed;
             PlayAnim(dir == 0 ? "idle" : "walk");
             rb.velocity = new Vector2(speedX, rb.velocity.y);
-            if (cachedTransform.position.y < DeathY)
-                SceneManager.LoadScene("DeathScene");
         }
     }
 
