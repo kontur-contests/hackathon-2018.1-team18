@@ -35,10 +35,15 @@ class MainCharacter : MonoBehaviour
         {2, "2_Body_Double1_6" }
     };
 
-    private static readonly Dictionary<int, string> LastTransformFrame = new Dictionary<int, string>()
+    private static readonly Dictionary<int, string> LastTransformStartFrame = new Dictionary<int, string>()
     {
         {1, "1_Body_Transform1_22" },
         {2, "Nothing" }
+    };
+
+    private static readonly Dictionary<int, string> LastTransformEndFrame = new Dictionary<int, string>()
+    {
+        {2, "2_Body_Transform2_14"}
     };
 
     private const int DeathY = -5;
@@ -74,16 +79,19 @@ class MainCharacter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U) && stage == 1)
         {
             PlayAnim("transform");
+            rb.velocity = Vector2.zero;
             transforming = true;
             CreateEffect(flushPrefab);
         }
 
-        else if (sp.sprite.name == LastTransformFrame[stage])
+        else if (sp.sprite.name == LastTransformStartFrame[stage])
         {
             UpdateToNextStage();
             PlayAnim("transform");
-
         }
+
+        else if (stage > 1 && sp.sprite.name == LastTransformEndFrame[stage])
+            transforming = false;
 
         if (transforming) return;
 
