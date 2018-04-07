@@ -63,7 +63,10 @@ class MainCharacter : MonoBehaviour
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
         if (Input.GetKeyDown(KeyCode.U))
-            Stage = 2;
+            Stage++;
+        else if (Input.GetKeyDown(KeyCode.J))
+            Stage--;
+
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canMove)
