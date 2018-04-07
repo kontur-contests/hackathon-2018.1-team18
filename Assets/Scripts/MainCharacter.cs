@@ -24,26 +24,35 @@ class MainCharacter : MonoBehaviour
     private GameObject flushPrefab;
 
 
-    private static readonly Dictionary<int, string> LastJumpFrame = new Dictionary<int, string>()
+    private static readonly Dictionary<int, Color> flushColor = new Dictionary<int, Color>()
     {
-        {1, "1_Body_Jump1_4" },
-        {2, "2_Body_Jump1_10" }
+        {1, Color.white },
+        {2, new Color32(200, 50, 200, 255) }
     };
 
-    private static readonly Dictionary<int, string> LastDoubleJumpAnim = new Dictionary<int, string>()
+    private static readonly Dictionary<int, string> lastJumpFrame = new Dictionary<int, string>()
+    {
+        {1, "1_Body_Jump1_4" },
+        {2, "2_Body_Jump1_10" },
+        {3, "3_Body_Jump1_15" }
+    };
+
+    private static readonly Dictionary<int, string> lastDoubleJumpAnim = new Dictionary<int, string>()
     {
         {2, "2_Body_Double1_6" }
     };
 
-    private static readonly Dictionary<int, string> LastTransformStartFrame = new Dictionary<int, string>()
+    private static readonly Dictionary<int, string> lastTransformStartFrame = new Dictionary<int, string>()
     {
         {1, "1_Body_Transform1_22" },
-        {2, "Nothing" }
+        {2, "2_Body_OutTransform2_23" },
+        {3, "Nothing" }
     };
 
-    private static readonly Dictionary<int, string> LastTransformEndFrame = new Dictionary<int, string>()
+    private static readonly Dictionary<int, string> lastTransformEndFrame = new Dictionary<int, string>()
     {
-        {2, "2_Body_Transform2_14"}
+        {2, "2_Body_Transform2_14"},
+        {3, "3_Body_InTransform2_8"}
     };
 
     private const int DeathY = -5;
@@ -67,7 +76,8 @@ class MainCharacter : MonoBehaviour
     private void UpdateToNextStage()
     {
         stage++;
-        renderers.position = new Vector2(renderers.position.x + 0.1f, renderers.position.y - 0.1f);
+        if(stage == 2)
+            renderers.position = new Vector2(renderers.position.x + 0.1f, renderers.position.y - 0.1f);
         bodyAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Body");
         flowerAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"{stage}_Flower");
     }
@@ -78,21 +88,21 @@ class MainCharacter : MonoBehaviour
             SceneManager.LoadScene("DeathScene");
         if (canMove)
         {
-            if (Input.GetKeyDown(KeyCode.U) && stage == 1)
+            if (Input.GetKeyDown(KeyCode.U) && stage < 3)
             {
-                PlayAnim("transform");
+                PlayAnim("outtransform");
                 rb.velocity = Vector2.zero;
                 transforming = true;
-                CreateEffect(flushPrefab);
+                CreateEffect(flushPrefab).GetComponent<SpriteRenderer>().color = flushColor[stage];
             }
 
-            else if (sp.sprite.name == LastTransformStartFrame[stage])
+            else if (sp.sprite.name == lastTransformStartFrame[stage])
             {
                 UpdateToNextStage();
-                PlayAnim("transform");
+                PlayAnim("intransform");
             }
 
-            else if (stage > 1 && sp.sprite.name == LastTransformEndFrame[stage])
+            else if (stage > 1 && sp.sprite.name == lastTransformEndFrame[stage])
                 transforming = false;
         }
         if (transforming) return;
@@ -105,7 +115,7 @@ class MainCharacter : MonoBehaviour
                 PlayAnim("jump");
                 canMove = false;
             }
-            else if (stage > 1 && jumpCount == 1)
+            else if (stage == 2 && jumpCount == 1)
             {
                 jumpCount = 2;
                 PlayAnim("double");
@@ -113,13 +123,13 @@ class MainCharacter : MonoBehaviour
             }
             return;
         }
-        else if (sp.sprite.name == LastJumpFrame[stage])
+        else if (sp.sprite.name == lastJumpFrame[stage])
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
             return;
         }
-        else if (stage > 1 && sp.sprite.name == LastDoubleJumpAnim[stage])
+        else if (stage == 2 && sp.sprite.name == lastDoubleJumpAnim[stage])
         {
             rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
@@ -161,11 +171,12 @@ class MainCharacter : MonoBehaviour
         flowerAnim.Play(anim);
     }
 
-    private void CreateEffect(GameObject prefab)
+    private GameObject CreateEffect(GameObject prefab)
     {
         var effect = Instantiate(prefab, transform);
         effect.transform.localPosition = prefab.transform.position;
         effect.transform.localScale = prefab.transform.localScale;
         effect.transform.parent = null;
+        return effect;
     }
 }
