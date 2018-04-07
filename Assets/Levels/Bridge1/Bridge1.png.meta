@@ -1,9 +1,54 @@
 fileFormatVersion: 2
-guid: 5a6e50373eba0da499a40017620f9032
-timeCreated: 1523109149
+guid: c5e81325ebb281b48893dadb26fe099e
+timeCreated: 1523099291
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Bridge1_0
+    21300002: Bridge1_1
+    21300004: Bridge1_2
+    21300006: Bridge1_3
+    21300008: Bridge1_4
+    21300010: Bridge1_5
+    21300012: Bridge1_6
+    21300014: Bridge1_7
+    21300016: Bridge1_8
+    21300018: Bridge1_9
+    21300020: Bridge1_10
+    21300022: Bridge1_11
+    21300024: Bridge1_12
+    21300026: Bridge1_13
+    21300028: Bridge1_14
+    21300030: Bridge1_15
+    21300032: Bridge1_16
+    21300034: Bridge1_17
+    21300036: Bridge1_18
+    21300038: Bridge1_19
+    21300040: Bridge1_20
+    21300042: Bridge1_21
+    21300044: Bridge1_22
+    21300046: Bridge1_23
+    21300048: Bridge1_24
+    21300050: Bridge1_25
+    21300052: Bridge1_26
+    21300054: Bridge1_27
+    21300056: Bridge1_28
+    21300058: Bridge1_29
+    21300060: Bridge1_30
+    21300062: Bridge1_31
+    21300064: Bridge1_32
+    21300066: Bridge1_33
+    21300068: Bridge1_34
+    21300070: Bridge1_35
+    21300072: Bridge1_36
+    21300074: Bridge1_37
+    21300076: Bridge1_38
+    21300078: Bridge1_39
+    21300080: Bridge1_40
+    21300082: Bridge1_41
+    21300084: Bridge1_42
+    21300086: Bridge1_43
+    21300088: Bridge1_44
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -76,9 +121,649 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bridge1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_1
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_2
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_3
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_4
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_5
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_6
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_7
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_8
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 640
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_10
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_11
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_12
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_13
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_14
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_15
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_16
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_17
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 480
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_19
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_20
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_21
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_22
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_23
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_24
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_25
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_26
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 320
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_28
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_29
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_30
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_31
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_32
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_33
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_34
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_35
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 160
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_37
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_38
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_39
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_40
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_41
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_42
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_43
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridge1_44
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 0
+        width: 455
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
