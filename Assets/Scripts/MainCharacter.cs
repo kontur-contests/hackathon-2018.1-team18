@@ -89,19 +89,18 @@ class MainCharacter : MonoBehaviour
         }
         else if(Stage > 1 && sp.sprite.name == LastDoubleJumpAnim[Stage])
         {
-            rb.AddForce(new Vector2(0f, JumpSpeed * 1.2f));
+            rb.AddForce(new Vector2(0f, JumpSpeed));
             PlayAnim("inair");
             return;
         }
+        
+        var dir = Input.GetAxis("Horizontal");
+        if (dir != 0)
+            cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
+        var speedX = dir * MovementSpeed;
+        rb.velocity = new Vector2(speedX, rb.velocity.y);
         if (canMove && jumpCount == 0)
-        {
-            var dir = Input.GetAxis("Horizontal");
-            if (dir != 0)
-                cachedTransform.localScale = new Vector3(Mathf.Sign(dir) * startScale.x, startScale.y, startScale.z);
-            var speedX = dir * MovementSpeed;
             PlayAnim(dir == 0 ? "idle" : "walk");
-            rb.velocity = new Vector2(speedX, rb.velocity.y);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
