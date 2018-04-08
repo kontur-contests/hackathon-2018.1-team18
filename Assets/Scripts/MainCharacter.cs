@@ -19,9 +19,11 @@ class MainCharacter : MonoBehaviour
     private SpriteRenderer sp;
     private bool canMove = true;
     private bool transforming = false;
+    private bool attacking = false;
     private GameObject dustPrefab;
     private GameObject poofPrefab;
     private GameObject flushPrefab;
+    private GameObject blastPrefab;
 
 
     private static readonly Dictionary<int, Color> flushColor = new Dictionary<int, Color>()
@@ -55,6 +57,16 @@ class MainCharacter : MonoBehaviour
         {3, "3_Body_InTransform2_8"}
     };
 
+    private static readonly Dictionary<int, string> applyAttackFrame = new Dictionary<int, string>()
+    {
+        {3, "3_Body_Attack2_13" }
+    };
+
+    private static readonly Dictionary<int, string> endAttackFrame = new Dictionary<int, string>()
+    {
+        {3, "3_Body_Attack3_12" }
+    };
+
     private const int DeathY = -5;
     private const float distanceToGroundLandingStart = 0.8f;
 
@@ -70,6 +82,7 @@ class MainCharacter : MonoBehaviour
         dustPrefab = Resources.Load<GameObject>("Dust");
         poofPrefab = Resources.Load<GameObject>("Poof");
         flushPrefab = Resources.Load<GameObject>("Flush/Flush");
+        blastPrefab = Resources.Load<GameObject>("Blast/Blast");
         stage = 1;
     }
 
@@ -86,6 +99,18 @@ class MainCharacter : MonoBehaviour
     {
         if (cachedTransform.position.y < DeathY)
             SceneManager.LoadScene("DeathScene");
+
+        if (attacking)
+        {
+            if (sp.sprite.name == endAttackFrame[stage])
+                attacking = false;
+            else if(sp.sprite.name == applyAttackFrame[stage])
+            {
+                if(stage == 3)
+                    CreateEffect(blastPrefab).GetComponent<Blast>().Direction = Mathf.Sign(renderers.localScale.x);
+            }
+            return;
+        }
         if (canMove)
         {
             if (Input.GetKeyDown(KeyCode.U) && stage < 3)
@@ -122,6 +147,11 @@ class MainCharacter : MonoBehaviour
                 CreateEffect(poofPrefab);
             }
             return;
+        }
+        else if(stage >= 3 && Input.GetKeyDown(KeyCode.E) && !attacking)
+        {
+            attacking = true;
+            PlayAnim("attack");
         }
         else if (sp.sprite.name == lastJumpFrame[stage])
         {
@@ -174,7 +204,9 @@ class MainCharacter : MonoBehaviour
     private GameObject CreateEffect(GameObject prefab)
     {
         var effect = Instantiate(prefab, transform);
-        effect.transform.localPosition = prefab.transform.position;
+        effect.transform.localPosition = new Vector2(
+            prefab.transform.position.x * Mathf.Sign(renderers.localScale.x),
+            prefab.transform.position.y);
         effect.transform.localScale = prefab.transform.localScale;
         effect.transform.parent = null;
         return effect;
