@@ -20,7 +20,7 @@ class MainCharacter : MonoBehaviour
     private bool canMove = true;
     private bool transforming = false;
     private bool attacking = false;
-    private bool inWellArea = false;
+    private GameObject currentWell = null;
     private GameObject dustPrefab;
     private GameObject poofPrefab;
     private GameObject flushPrefab;
@@ -114,11 +114,12 @@ class MainCharacter : MonoBehaviour
         }
         if (canMove)
         {
-            if (inWellArea && Input.GetKeyDown(KeyCode.U) && stage < 3)
+            if (currentWell != null && Input.GetKeyDown(KeyCode.U) && stage < 3)
             {
                 PlayAnim("outtransform");
                 rb.velocity = Vector2.zero;
                 transforming = true;
+                Destroy(currentWell);
                 CreateEffect(flushPrefab).GetComponent<SpriteRenderer>().color = flushColor[stage];
             }
 
@@ -199,13 +200,13 @@ class MainCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Well")
-            inWellArea = true;
+            currentWell = collision.gameObject;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Well")
-            inWellArea = false;
+            currentWell = null;
     }
 
     private void PlayAnim(string anim)
