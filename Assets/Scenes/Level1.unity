@@ -1849,7 +1849,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.62}
   m_EdgeRadius: 0
   m_Points:
   - {x: -18.272068, y: 0.15795515}
@@ -3348,7 +3348,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 4a77e6ccee3ba0b4f96a332e8cfe6b63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64f5b3e7a52c1754c8c1419d63befeea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
