@@ -20,6 +20,7 @@ class MainCharacter : MonoBehaviour
     private bool canMove = true;
     private bool transforming = false;
     private bool attacking = false;
+    private bool inWellArea = false;
     private GameObject dustPrefab;
     private GameObject poofPrefab;
     private GameObject flushPrefab;
@@ -113,7 +114,7 @@ class MainCharacter : MonoBehaviour
         }
         if (canMove)
         {
-            if (Input.GetKeyDown(KeyCode.U) && stage < 3)
+            if (inWellArea && Input.GetKeyDown(KeyCode.U) && stage < 3)
             {
                 PlayAnim("outtransform");
                 rb.velocity = Vector2.zero;
@@ -193,6 +194,18 @@ class MainCharacter : MonoBehaviour
                 CreateEffect(dustPrefab);
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Well")
+            inWellArea = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Well")
+            inWellArea = false;
     }
 
     private void PlayAnim(string anim)
