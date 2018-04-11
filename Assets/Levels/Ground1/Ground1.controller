@@ -27,8 +27,8 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Ground1Green
-  m_Speed: 1
+  m_Name: green
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -40,7 +40,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8613d036fc0c6c64cbc40271cf54e866, type: 2}
+  m_Motion: {fileID: 7400000, guid: a5832e200a0a52149b975e39d5b51871, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -84,7 +84,7 @@ AnimatorStateMachine:
     m_Position: {x: 384, y: 84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102416102253217766}
-    m_Position: {x: 458.94876, y: 199.26349, z: 0}
+    m_Position: {x: 396, y: 204, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4302684857446166}
-  - component: {fileID: 114913174973299244}
   - component: {fileID: 212081169340826882}
   - component: {fileID: 50847776337788688}
   - component: {fileID: 95985750286805030}
   - component: {fileID: 58767800410350492}
+  - component: {fileID: 114043208402916108}
   m_Layer: 0
   m_Name: Blast
   m_TagString: Untagged
@@ -88,7 +88,7 @@ Animator:
   m_GameObject: {fileID: 1045578805544204}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8bcea3f55a1e3d041a8fb235a9f9fb1c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 63f5ececfa54da6418c0cdad77ba476a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -96,7 +96,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114913174973299244
+--- !u!114 &114043208402916108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -104,11 +104,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1045578805544204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35536a1cc1289454895e8f173d9d1f5d, type: 3}
+  m_Script: {fileID: 11500000, guid: ce5244d321fdaea4dbe3b5476fec4b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 30
-  Speed: 5
+  Speed: 10
   Direction: 1
 --- !u!212 &212081169340826882
 SpriteRenderer:
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8df9e5102fa5cb4c8addfcd46230e58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6aa19f52e56eab4286f29c0bc91f952, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

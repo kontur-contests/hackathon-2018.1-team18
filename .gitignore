@@ -5,6 +5,8 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 things/
+1_Data/
+1_Data - копия/
 
 # Visual Studio cache directory
 /.vs/

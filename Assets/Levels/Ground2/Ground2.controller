@@ -52,8 +52,8 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Ground2Green
-  m_Speed: 1
+  m_Name: green
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -84,7 +84,7 @@ AnimatorStateMachine:
     m_Position: {x: 312, y: 48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102777555494884886}
-    m_Position: {x: 426.08115, y: 196.13107, z: 0}
+    m_Position: {x: 420, y: 192, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
